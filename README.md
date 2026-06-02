@@ -41,7 +41,7 @@ Karena ini adalah aplikasi web statis (Vanilla JS), kamu tidak perlu melakukan i
 ## 👨‍💻 Author
 **Abiyya Hamdan N**  
 Siswa SMKN 4 BANDUNG  
-[LinkedIn Aku](https://www.linkedin.com/in/username-kamu/) | [GitHub Aku]([https://github.com/username-kamu/](https://github.com/Abeyyyyyy/personal-finance-tracker))
+[LinkedIn Aku](https://www.linkedin.com/in/username-kamu/) | [GitHub Aku]([https://github.com/username-kamu/](https://github.com/Abeyyyyyy/personal-finance-tracker)
 
 ---
 *Proyek ini dibuat untuk memenuhi submission kelas Front-End Web Pemula di Dicoding.*
