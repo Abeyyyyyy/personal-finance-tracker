@@ -1,0 +1,180 @@
+/* --- Variabel Warna & Reset Dasar --- */
+:root {
+    --primary: #2563eb;
+    --income: #16a34a;
+    --expense: #dc2626;
+    --bg: #f3f4f6;
+    --card-bg: #ffffff;
+    --text: #1f2937;
+    --text-light: #6b7280;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* --- Header --- */
+.tracker-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.tracker-header h1 {
+    color: var(--primary);
+    margin-bottom: 5px;
+}
+.tracker-header__greeting {
+    color: var(--text-light);
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+/* --- Container Utama --- */
+.tracker-main {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* --- Dashboard --- */
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+.dashboard-card {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    text-align: center;
+    transition: transform 0.2s;
+}
+.dashboard-card:hover {
+    transform: translateY(-3px);
+}
+.dashboard-card h3 {
+    font-size: 1rem;
+    color: var(--text-light);
+    margin-bottom: 10px;
+}
+.dashboard-card h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+.dashboard-card.income h2 { color: var(--income); }
+.dashboard-card.expense h2 { color: var(--expense); }
+
+/* --- Form & Search --- */
+.form-section, .search-section {
+    background: var(--card-bg);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
+}
+.form-section h2, .list-container h2 {
+    margin-bottom: 20px;
+    color: var(--primary);
+}
+.form-group { margin-bottom: 15px; }
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+.form-group input, .form-group select, .search-section input {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border 0.2s;
+}
+.form-group input:focus, .form-group select:focus, .search-section input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 10px;
+}
+button[type="submit"]:hover { background-color: #1d4ed8; }
+
+/* --- Daftar Transaksi --- */
+.lists-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+.list-container {
+    background: var(--card-bg);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+.transaction-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    min-height: 100px;
+}
+
+/* --- Styling Otomatis untuk Kartu Transaksi (Buatan JS nanti) --- */
+[data-testid="transactionItem"] {
+    background: #f9fafb;
+    border-left: 5px solid var(--primary);
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    transition: transform 0.2s;
+}
+[data-testid="transactionItem"]:hover { transform: scale(1.01); }
+[data-testid="transactionItem"] h3 { font-size: 1.2rem; margin-bottom: 5px; }
+[data-testid="transactionItem"] p { font-size: 0.95rem; color: var(--text-light); }
+[data-testid="transactionItem"] div { display: flex; gap: 10px; margin-top: 10px; }
+[data-testid="transactionItem"] button {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: opacity 0.2s;
+}
+[data-testid="transactionItem"] button:hover { opacity: 0.8; }
+[data-testid="transactionItemEditTypeButton"] { background-color: #f59e0b; color: white; }
+[data-testid="transactionItemDeleteButton"] { background-color: var(--expense); color: white; }
+
+/* --- Tampilan Responsif (HP) --- */
+@media (max-width: 768px) {
+    .lists-section { grid-template-columns: 1fr; }
+    .dashboard-card h2 { font-size: 1.5rem; }
+}
+
+/* Warna khusus untuk tombol Edit */
+[data-testid="transactionItemEditButton"] { 
+    background-color: #3b82f6; 
+    color: white; 
+}

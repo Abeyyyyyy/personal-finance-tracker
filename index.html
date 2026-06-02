@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Finance Tracker | Abiyya Hamdan N</title>
+    <!-- Menghubungkan dengan file CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header & Sapaan -->
+    <header class="tracker-header">
+        <h1>💰 Personal Finance Tracker</h1>
+        <p class="tracker-header__greeting">Siswa Front-End</p>
+    </header>
+
+    <main class="tracker-main">
+        
+        <!-- Dashboard Ringkasan Keuangan -->
+        <section class="dashboard">
+            <div class="dashboard-card">
+                <h3>Saldo Saat Ini</h3>
+                <h2 id="balance">Rp0</h2>
+            </div>
+            <div class="dashboard-card income">
+                <h3>Total Pemasukan</h3>
+                <h2 id="incomeTotal">Rp0</h2>
+            </div>
+            <div class="dashboard-card expense">
+                <h3>Total Pengeluaran</h3>
+                <h2 id="expenseTotal">Rp0</h2>
+            </div>
+        </section>
+
+        <!-- Form Tambah Transaksi -->
+        <section class="form-section">
+            <h2>Tambah Transaksi Baru</h2>
+            <form id="transactionForm">
+                <div class="form-group">
+                    <label for="title">Judul Transaksi</label>
+                    <input type="text" id="title" placeholder="Contoh: Gaji Bulanan" required>
+                </div>
+                <div class="form-group">
+                    <label for="amount">Nominal (Rp)</label>
+                    <input type="number" id="amount" placeholder="Contoh: 5000000" required>
+                </div>
+                <div class="form-group">
+                    <label for="date">Tanggal</label>
+                    <input type="date" id="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="type">Tipe</label>
+                    <select id="type" required>
+                        <option value="income">Pemasukan</option>
+                        <option value="expense">Pengeluaran</option>
+                    </select>
+                </div>
+                <button type="submit" id="submitBtn">Simpan Transaksi</button>
+            </form>
+        </section>
+
+        <!-- Fitur Pencarian -->
+        <section class="search-section">
+            <label for="searchInput">🔍 Cari Transaksi:</label>
+            <input type="text" id="searchInput" placeholder="Ketik judul transaksi...">
+        </section>
+
+        <!-- Daftar Transaksi (Income & Expense) -->
+        <section class="lists-section">
+            <div class="list-container">
+                <h2>💼 Riwayat Pemasukan</h2>
+                <div id="incomeList" class="transaction-list"></div>
+            </div>
+            <div class="list-container">
+                <h2>🛒 Riwayat Pengeluaran</h2>
+                <div id="expenseList" class="transaction-list"></div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Menghubungkan dengan file JavaScript -->
+    <script src="main.js"></script>
+</body>
+</html>
